@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Book Projects</title>
+  <style>
+    body {
+      background-color: #26E148;
+      color: #222222;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      padding: 0.5em 1em 0.5em 1em;
+      background-color: #ffffff33;
+    }
+
+    header h1 {
+      margin-bottom: 0;
+    }
+
+    nav {
+      display: flex;
+      gap: 1em;
+      background-color: #ffffff33;
+      padding: 0.5em 1em;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: #0048FF;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 0.5em 1em;
+    }
+
+    nav button.active {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 1em;
+    }
+
+/* Unsure of keeping these two lines */
+    main p {
+        margin-bottom: 0.3em;
+    }
+
+    main ul {
+     margin-top: 0.3em;
+    }
+/* End line */
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    a {
+      color: #0048FF;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Neinset</h1>
+  </header>
+
+  <nav>
+    <button class="tab-button active" data-tab="The Grief Complex">The Grief Complex</button>
+    <!-- <button class="tab-button" data-tab="other-projects">Other Projects</button> -->
+    <button class="tab-button active" data-tab="About">About</button>
+  </nav>
+
+  <main>
+    <section id="The Grief Complex" class="tab-content active">
+      <h2>The Grief Complex</h2>
+      <p>Download individual phases below:</p>
+      <ul>
+        <li><a href="my-book-1.pdf" target="_blank">TGC Phase 1 (PDF)</a></li>
+        <li><a href="my-book-2.pdf" target="_blank">TGC Phase 2 (PDF)</a></li>
+        <li><a href="my-book-2.pdf" target="_blank">TGC Phase 3 (PDF)</a></li>
+        <!-- <li><a href="INTERMISSION.pdf" target="_blank">TGC - INTERMISSION (PDF)</a></li>
+        <li><a href="my-book-2.pdf" target="_blank">TGC Phase 4 (PDF)</a></li>
+        <li><a href="my-book-2.pdf" target="_blank">TGC Phase 5 (PDF)</a></li> -->
+      </ul>
+
+      <p>Completed short stories:</p>
+      <ul>
+        <li><a href="Dentist.pdf" target="_blank">TGC - Dentist (PDF)</a></li>
+        <li><a href="Abortion.pdf" target="_blank">TGC - Abortion (PDF)</a></li>
+      </ul>
+    </section>
+
+    <!-- <section id="other-projects" class="tab-content">
+      <h2>Other Projects</h2>
+      <p>This is where you can describe or link to other things you're working on.</p>
+      <ul>
+        <li><a href="https://example.com/project1" target="_blank">Project 1</a></li>
+        <li><a href="https://example.com/project2" target="_blank">Project 2</a></li>
+      </ul>
+    </section>
+  </main> -->
+
+      <section id="About" class="tab-content">
+      <p>This is where We talk all about us.</p>
+      <ul>
+        <li><a href="https://ottiliere.tumblr.com">Lucy's tumblr (ottiliere)</a></li>
+        <li><a href="https://i17iskillingmylife.tumblr.com/">Dane's tumblr (i17iskillingmylife)</a></li>
+        <li><a href="https://ottiliere.itch.io/">itch.io page</a></li>
+      </ul>
+
+      <!-- <ul>
+        <li><a href="https://ottiliere.tumblr.com">Lucy's tumblr (ottiliere)</a></li>
+        <li><a href="https://i17iskillingmylife.tumblr.com/">Dane's tumblr (i17iskillingmylife)</a></li>
+      </ul> -->
+    </section>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const target = button.getAttribute('data-tab');
+
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        contents.forEach(section => {
+          section.classList.toggle('active', section.id === target);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
