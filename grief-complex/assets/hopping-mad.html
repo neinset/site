@@ -28,15 +28,22 @@
     }
 
     .photos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1em;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1em;
     }
 
-    .photos img {
-    width: 100%;
-    height: auto;
-    display: block;
+    .photo-frame {
+      border: 1px solid #0048FF;
+      padding: 0.25em;
+      background-color: #ffffff22;
+      box-sizing: border-box;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
   </style>
 </head>
@@ -52,100 +59,67 @@
 
 <main>
   <div class="photos">
-    <center><b>Body</b></center>
-    <img src="/images/assets/hopping-mad/PXL_20260104_232116536.jpg" alt="Hopping Mad view 1">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232121763.jpg" alt="Hopping Mad view 2">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232123454.jpg" alt="Hopping Mad view 3">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232129638.jpg" alt="Hopping Mad view 4">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232134588.jpg" alt="Hopping Mad view 5">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232148757.jpg" alt="Hopping Mad view 6">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232202777.jpg" alt="Hopping Mad view 7">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232209929.jpg" alt="Hopping Mad view 8">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232217027.jpg" alt="Hopping Mad view 9">
-    <!-- <img src="/images/assets/hopping-mad/PXL_20260104_232221951.jpg" alt="Hopping Mad view 10"> -->
-    <!-- <img src="/images/assets/hopping-mad/PXL_20260104_232223026.jpg" alt="Hopping Mad view 11"> -->
-    <!-- <img src="/images/assets/hopping-mad/PXL_20260104_232228758.jpg" alt="Hopping Mad view 12"> -->
-    <img src="/images/assets/hopping-mad/PXL_20260104_232309826.jpg" alt="Hopping Mad view 13">
-    <!-- <img src="/images/assets/hopping-mad/PXL_20260104_232311697.jpg" alt="Hopping Mad view 14"> -->
-    <img src="/images/assets/hopping-mad/PXL_20260104_232320847.jpg" alt="Hopping Mad view 15">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232352115.jpg" alt="Hopping Mad view 16">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232017301.jpg" alt="Hopping Mad view 83">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232032627.jpg" alt="Hopping Mad view 84">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232036461.jpg" alt="Hopping Mad view 85">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232041246.jpg" alt="Hopping Mad view 86">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232046176.jpg" alt="Hopping Mad view 87">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232057358.jpg" alt="Hopping Mad view 88">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232059586.jpg" alt="Hopping Mad view 89">
-    <center><b>Head</b></center>
-    <!-- <img src="/images/assets/hopping-mad/PXL_20260104_232501047.jpg" alt="Hopping Mad view 17"> -->
-    <!-- <img src="/images/assets/hopping-mad/PXL_20260104_232503065.jpg" alt="Hopping Mad view 18">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232504284.jpg" alt="Hopping Mad view 19">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232505841.jpg" alt="Hopping Mad view 20">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232507269.jpg" alt="Hopping Mad view 21">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232508264.jpg" alt="Hopping Mad view 22">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232509281.jpg" alt="Hopping Mad view 23">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232510477.jpg" alt="Hopping Mad view 24"> -->
-    <!-- <img src="/images/assets/hopping-mad/PXL_20260104_232511674.jpg" alt="Hopping Mad view 25"> -->
 
-    <!-- <img src="/images/assets/hopping-mad/PXL_20260104_232512993.jpg" alt="Hopping Mad view 26">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232515339.jpg" alt="Hopping Mad view 27">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232516095.jpg" alt="Hopping Mad view 28">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232516932.jpg" alt="Hopping Mad view 29">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232517971.jpg" alt="Hopping Mad view 30">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232518719.jpg" alt="Hopping Mad view 31">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232519349.jpg" alt="Hopping Mad view 32">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232521180.jpg" alt="Hopping Mad view 33">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232521910.jpg" alt="Hopping Mad view 34">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232522664.jpg" alt="Hopping Mad view 35">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232523553.jpg" alt="Hopping Mad view 36">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232524378.jpg" alt="Hopping Mad view 37">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232525510.jpg" alt="Hopping Mad view 38">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232527084.jpg" alt="Hopping Mad view 39">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232528063.jpg" alt="Hopping Mad view 40">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232528781.jpg" alt="Hopping Mad view 41">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232530270.jpg" alt="Hopping Mad view 42">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232532084.jpg" alt="Hopping Mad view 43">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232532904.jpg" alt="Hopping Mad view 44"> -->
-    <img src="/images/assets/hopping-mad/PXL_20260104_232534953.jpg" alt="Hopping Mad view 45">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232535636.jpg" alt="Hopping Mad view 46">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232536925.jpg" alt="Hopping Mad view 47">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232538335.jpg" alt="Hopping Mad view 48">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232540021.jpg" alt="Hopping Mad view 49">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232540989.jpg" alt="Hopping Mad view 50">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232542686.jpg" alt="Hopping Mad view 51">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232543830.jpg" alt="Hopping Mad view 52">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232545013.jpg" alt="Hopping Mad view 53">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232547213.jpg" alt="Hopping Mad view 54">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232551645.jpg" alt="Hopping Mad view 55">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232552441.jpg" alt="Hopping Mad view 56">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232553644.jpg" alt="Hopping Mad view 57">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232555110.jpg" alt="Hopping Mad view 58">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232556405.jpg" alt="Hopping Mad view 59">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232557261.jpg" alt="Hopping Mad view 60">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232558265.jpg" alt="Hopping Mad view 61">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232559276.jpg" alt="Hopping Mad view 62">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232600222.jpg" alt="Hopping Mad view 63">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232602364.jpg" alt="Hopping Mad view 64">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232603929.jpg" alt="Hopping Mad view 65">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232605306.jpg" alt="Hopping Mad view 66">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232606351.jpg" alt="Hopping Mad view 67">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232607929.jpg" alt="Hopping Mad view 68">
-    <img src="/images/assets/hopping-mad/PXL_20260104_232609276.jpg" alt="Hopping Mad view 69">
-    <!-- <img src="/images/assets/hopping-mad/PXL_20260104_231812527.jpg" alt="Hopping Mad view 70">
-    <img src="/images/assets/hopping-mad/PXL_20260104_231816932.jpg" alt="Hopping Mad view 71"> -->
-    <!-- <img src="/images/assets/hopping-mad/PXL_20260104_231824059.jpg" alt="Hopping Mad view 72">
-    <img src="/images/assets/hopping-mad/PXL_20260104_231830552.jpg" alt="Hopping Mad view 73"> -->
-    <img src="/images/assets/hopping-mad/PXL_20260104_231837829.jpg" alt="Hopping Mad view 74">
-    <!-- <img src="/images/assets/hopping-mad/PXL_20260104_231845772.jpg" alt="Hopping Mad view 75"> -->
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/1.jpg" alt="Hopping Mad view 1" loading="lazy">
+    </div>
 
-    <img src="/images/assets/hopping-mad/PXL_20260104_231913794.jpg" alt="Hopping Mad view 77">
-    <img src="/images/assets/hopping-mad/PXL_20260104_231927866.jpg" alt="Hopping Mad view 80">
-    <img src="/images/assets/hopping-mad/PXL_20260104_231918550.jpg" alt="Hopping Mad view 78">
-    <img src="/images/assets/hopping-mad/PXL_20260104_231922098.jpg" alt="Hopping Mad view 79">
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/2.jpg" alt="Hopping Mad view 2" loading="lazy">
+    </div>
 
-    <!-- <img src="/images/assets/hopping-mad/PXL_20260104_231934416.jpg" alt="Hopping Mad view 81"> -->
-    <img src="/images/assets/hopping-mad/PXL_20260104_231950472.jpg" alt="Hopping Mad view 82">
-    <img src="/images/assets/hopping-mad/PXL_20260104_231848830.jpg" alt="Hopping Mad view 76">    
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/3.jpg" alt="Hopping Mad view 3" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/4.jpg" alt="Hopping Mad view 4" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/5.jpg" alt="Hopping Mad view 5" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/6.jpg" alt="Hopping Mad view 6" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/7.jpg" alt="Hopping Mad view 7" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/8.jpg" alt="Hopping Mad view 8" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/9.jpg" alt="Hopping Mad view 9" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/10.jpg" alt="Hopping Mad view 10" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/11.jpg" alt="Hopping Mad view 11" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/12.jpg" alt="Hopping Mad view 12" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/13.jpg" alt="Hopping Mad view 13" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/14.jpg" alt="Hopping Mad view 14" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/hopping-mad/15.jpg" alt="Hopping Mad view 15" loading="lazy">
+    </div>
+
   </div>
 </main>
 

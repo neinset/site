@@ -28,16 +28,23 @@
     }
 
     .photos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1em;
-  }
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1em;
+    }
 
-  .photos img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+    .photo-frame {
+      border: 2px solid #0048FF;
+      padding: 0.5em;
+      background-color: #ffffff22;
+      box-sizing: border-box;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -52,54 +59,59 @@
 
 <main>
   <div class="photos">
-    <!-- <img src="/images/assets/teratoma-1/PXL_20260103_224306546.jpg" alt="Teratoma view 1">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224307278.jpg" alt="Teratoma view 2">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224309413.jpg" alt="Teratoma view 3">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224310672.jpg" alt="Teratoma view 4">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224311684.jpg" alt="Teratoma view 5">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224313785.jpg" alt="Teratoma view 6">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224315467.jpg" alt="Teratoma view 7">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224319666.jpg" alt="Teratoma view 8">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224321412.jpg" alt="Teratoma view 9">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224322850.jpg" alt="Teratoma view 10"> -->
-    <img src="/images/assets/teratoma-1/PXL_20260103_224323717.jpg" alt="Teratoma view 11">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224326772.jpg" alt="Teratoma view 12">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224328723.jpg" alt="Teratoma view 13">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224330646.jpg" alt="Teratoma view 14">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224332623.jpg" alt="Teratoma view 15">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224334211.jpg" alt="Teratoma view 16">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224336403.jpg" alt="Teratoma view 17">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224339083.jpg" alt="Teratoma view 18">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224341072.jpg" alt="Teratoma view 19">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224343559.jpg" alt="Teratoma view 20">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224345556.jpg" alt="Teratoma view 21">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224354772.jpg" alt="Teratoma view 22">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224357561.jpg" alt="Teratoma view 23">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224402069.jpg" alt="Teratoma view 24">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224406167.jpg" alt="Teratoma view 25">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224409261.jpg" alt="Teratoma view 26">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224414105.jpg" alt="Teratoma view 27">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224417057.jpg" alt="Teratoma view 28">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224419309.jpg" alt="Teratoma view 29">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224427311.jpg" alt="Teratoma view 30">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224430346.jpg" alt="Teratoma view 31">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224433427.jpg" alt="Teratoma view 32">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224436280.jpg" alt="Teratoma view 33">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224439501.jpg" alt="Teratoma view 34">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224442402.jpg" alt="Teratoma view 35">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224444992.jpg" alt="Teratoma view 36">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224447610.jpg" alt="Teratoma view 37">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224450269.jpg" alt="Teratoma view 38">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224454290.jpg" alt="Teratoma view 39">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224246815.jpg" alt="Teratoma view 40">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224252736.jpg" alt="Teratoma view 41">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224256595.jpg" alt="Teratoma view 42">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224257833.jpg" alt="Teratoma view 43">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224300449.jpg" alt="Teratoma view 44">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224303583.jpg" alt="Teratoma view 45">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224304124.jpg" alt="Teratoma view 46">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224305010.jpg" alt="Teratoma view 47">
-    <img src="/images/assets/teratoma-1/PXL_20260103_224305845.jpg" alt="Teratoma view 48">
+
+    <div class="photo-frame">
+      <img src="/images/assets/teratomas/1.jpg" alt="Teratoma view 1" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/teratomas/2.jpg" alt="Teratoma view 2" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/teratomas/3.jpg" alt="Teratoma view 3" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/teratomas/4.jpg" alt="Teratoma view 4" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/teratomas/5.jpg" alt="Teratoma view 5" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/teratomas/6.jpg" alt="Teratoma view 6" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/teratomas/7.jpg" alt="Teratoma view 7" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/teratomas/8.jpg" alt="Teratoma view 8" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/teratomas/9.jpg" alt="Teratoma view 9" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/teratomas/10.jpg" alt="Teratoma view 10" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/teratomas/11.jpg" alt="Teratoma view 11" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/teratomas/12.jpg" alt="Teratoma view 12" loading="lazy">
+    </div>
+
+    <div class="photo-frame">
+      <img src="/images/assets/teratomas/13.jpg" alt="Teratoma view 13" loading="lazy">
+    </div>
+
   </div>
 </main>
 
