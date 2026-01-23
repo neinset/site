@@ -28,16 +28,18 @@
     }
 
     .photos {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1em;
+      column-count: 3;
+      column-gap: 1em;
     }
 
+
     .photo-frame {
-      border: 1px solid #0048FF;
+      /* border: 1px solid #0048FF; */
       padding: 0.25em;
-      background-color: #ffffff22;
+      background-color: #ffffff33;
       box-sizing: border-box;
+      break-inside: avoid;
+      margin-bottom: 1em;
     }
 
     .photo-frame img {
