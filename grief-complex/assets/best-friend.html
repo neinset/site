@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Best Friend – TGC Asset</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* Lightbox overlay */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 90vh;
+      box-shadow: 0 0 20px #000;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .photo-frame img {
+      cursor: pointer;
+    }
+
+    body {
+      background-color: #26E148;
+      font-family: sans-serif;
+      margin: 0;
+    }
+
+    header, nav {
+      background-color: #ffffff33;
+      padding: 0.5em 1em;
+    }
+
+    nav a {
+      color: #0048FF;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 1em;
+    }
+
+    .photos {
+      column-count: 3;
+      column-gap: 1em;
+    }
+
+    .photo-frame {
+      padding: 0.5em;
+      background-color: #ffffff33;
+      box-sizing: border-box;
+      break-inside: avoid;
+      margin-bottom: 1em;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Best Friend</h1>
+</header>
+
+<nav>
+  <a href="/grief-complex/assets.html">Back to Assets</a>
+</nav>
+
+<main>
+  <div class="photos">
+
+    <!-- Images 1–19 -->
+    <div class="photo-frame"><img src="/images/assets/best-friend/1.jpg"  alt="Best Friend view 1"  loading="lazy"></div>
+    <div class="photo-frame"><img src="/images/assets/best-friend/2.jpg"  alt="Best Friend view 2"  loading="lazy"></div>
+    <div class="photo-frame"><img src="/images/assets/best-friend/3.jpg"  alt="Best Friend view 3"  loading="lazy"></div>
+    <div class="photo-frame"><img src="/images/assets/best-friend/4.jpg"  alt="Best Friend view 4"  loading="lazy"></div>
+    <div class="photo-frame"><img src="/images/assets/best-friend/5.jpg"  alt="Best Friend view 5"  loading="lazy"></div>
+    <div class="photo-frame"><img src="/images/assets/best-friend/6.jpg"  alt="Best Friend view 6"  loading="lazy"></div>
+    <!-- <div class="photo-frame"><img src="/images/assets/best-friend/7.jpg"  alt="Best Friend view 7"  loading="lazy"></div> -->
+    <div class="photo-frame"><img src="/images/assets/best-friend/8.jpg"  alt="Best Friend view 8"  loading="lazy"></div>
+    <!-- <div class="photo-frame"><img src="/images/assets/best-friend/9.jpg"  alt="Best Friend view 9"  loading="lazy"></div> -->
+    <div class="photo-frame"><img src="/images/assets/best-friend/10.jpg" alt="Best Friend view 10" loading="lazy"></div>
+    <div class="photo-frame"><img src="/images/assets/best-friend/11.jpg" alt="Best Friend view 11" loading="lazy"></div>
+    <div class="photo-frame"><img src="/images/assets/best-friend/12.jpg" alt="Best Friend view 12" loading="lazy"></div>
+    <!-- <div class="photo-frame"><img src="/images/assets/best-friend/13.jpg" alt="Best Friend view 13" loading="lazy"></div> -->
+    <div class="photo-frame"><img src="/images/assets/best-friend/14.jpg" alt="Best Friend view 14" loading="lazy"></div>
+    <div class="photo-frame"><img src="/images/assets/best-friend/15.jpg" alt="Best Friend view 15" loading="lazy"></div>
+    <div class="photo-frame"><img src="/images/assets/best-friend/16.jpg" alt="Best Friend view 16" loading="lazy"></div>
+    <div class="photo-frame"><img src="/images/assets/best-friend/17.jpg" alt="Best Friend view 17" loading="lazy"></div>
+    <!-- <div class="photo-frame"><img src="/images/assets/best-friend/18.jpg" alt="Best Friend view 18" loading="lazy"></div> -->
+    <div class="photo-frame"><img src="/images/assets/best-friend/19.jpg" alt="Best Friend view 19" loading="lazy"></div>
+
+  </div>
+</main>
+
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.photo-frame img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      lightbox.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
