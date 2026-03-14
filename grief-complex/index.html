@@ -7,6 +7,45 @@
   <link rel="icon" href="/favicon.png">
 
   <style>
+    .phase {
+      margin-bottom: 2em;
+    }
+
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 336px); 
+      gap: 3.5em;
+      /* justify-content: center; */
+    }
+
+    .thumb-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .thumb-frame {
+      padding: 0.5em;
+      background-color: #ffffff33;
+      box-sizing: border-box;
+      width: 320px; /* frame width same as image */
+    }
+
+    .thumb-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .thumb-row a {
+      display: block;
+    }
+
+    .thumb-desc {
+      width: 320px;
+    }
+
     body {
       background-color: #26E148;
       font-family: sans-serif;
@@ -28,6 +67,18 @@
     main {
       padding: 1em;
     }
+
+    .thumb-frame img:hover {
+      transform: scale(1.05);
+    }
+    
+    .phase-title {
+      font-weight: bold;
+      color: #0048FF;
+      font-size: 20px;
+      margin-bottom: 0.25em;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -40,15 +91,51 @@
   <a href="/">Home</a>
   <a href="/grief-complex/assets.html">Assets</a>
   <a href="/grief-complex/boards.html">Boards</a>
+  <a href="/msg_board.html">Comments</a>
 </nav>
 
 <main>
-  <p>Download individual phases:</p>
-  <ul>
-    <li><a href="/TGC_Phase-1.pdf" target="_blank">TGC Phase 1 (PDF)</a></li>
-    <li><a href="/TGC_Phase-2.pdf" target="_blank">TGC Phase 2 (PDF)</a></li>
-    <li><a href="/TGC_Phase-3.pdf" target="_blank">TGC Phase 3 (PDF)</a></li>
-  </ul>
+  <!-- <p>Download individual phases:</p> -->
+  <br></br>
+  <div class="phase thumb-grid">
+
+    <div class="thumb-row">
+      <div class="phase-title">Phase 1</div>
+      <a href="/TGC_Phase-1.pdf" download title="Phase 1 .pdf download">
+        <div class="thumb-frame">
+          <img src="/images/desc_thumbs/ph1.png" alt="Phase 1 preview">
+        </div>
+      </a>
+      <div class="thumb-desc">
+        Psychic parasitism; control, love, and control over love. 
+      </div>
+    </div>
+
+    <div class="thumb-row">
+      <div class="phase-title">Phase 2</div>
+      <a href="/TGC_Phase-2.pdf" download title="Phase 2 .pdf download">
+        <div class="thumb-frame">
+          <img src="/images/desc_thumbs/ph2.png" alt="Phase 2 preview">
+        </div>
+      </a>
+      <div class="thumb-desc">
+        Bad conversation and passive hostility. Do you think these people know what's happening to them? 
+      </div>
+    </div>
+
+    <div class="thumb-row">
+      <div class="phase-title">Phase 3</div>
+      <a href="/TGC_Phase-3.pdf" download title="Phase 3 .pdf download">
+        <div class="thumb-frame">
+          <img src="/images/desc_thumbs/ph3.png" alt="Phase 3 preview">
+        </div>
+      </a>
+      <div class="thumb-desc">
+        Yellow sweat, big eyes, and thoughtless distaniments won't take you too far. 
+      </div>
+    </div>
+
+  </div>
 </main>
 
 </body>
