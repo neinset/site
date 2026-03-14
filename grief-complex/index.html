@@ -56,16 +56,22 @@
       background-color: #ffffff33;
       padding: 0.5em 1em;
     }
+    nav {
+      display: flex;
+      gap: 1em; /* space between links */
+    }
 
     nav a {
       color: #0048FF;
       font-weight: bold;
-      margin-right: 1em;
+      /* margin-right: 1em; */
       text-decoration: none;
     }
 
     main {
       padding: 1em;
+            margin: 0;       
+      padding: 2rem 1.5rem; 
     }
 
     .thumb-frame img:hover {
@@ -79,6 +85,11 @@
       margin-bottom: 0.25em;
       text-align: center;
     }
+        
+    nav a.active {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
@@ -89,14 +100,14 @@
 
 <nav>
   <a href="/">Home</a>
+  <a href="/grief-complex/" class="active">The Grief Complex</a>
   <a href="/grief-complex/assets.html">Assets</a>
   <a href="/grief-complex/boards.html">Boards</a>
-  <a href="/msg_board.html">Comments</a>
 </nav>
 
 <main>
   <!-- <p>Download individual phases:</p> -->
-  <br></br>
+  <!-- <br></br> -->
   <div class="phase thumb-grid">
 
     <div class="thumb-row">
