@@ -123,6 +123,7 @@
 </nav>
 
 <main>
+
   <div class="viewer">
     <a id="img-link" href="" target="_blank">
       <img id="comic-img" src="" alt="">
@@ -133,6 +134,11 @@
     <button id="prev">← Prev</button>
     <button id="next">Next →</button>
   </div>
+
+    <div style="text-align:center; margin-bottom: 1em;">
+    <label for="page-select">Page:</label>
+    <select id="page-select"></select>
+  </div>
 </main>
 
 <script>
@@ -140,25 +146,8 @@
 
   const phase = params.get("phase") || "4";
   let page = parseInt(params.get("page")) || 1;
+  const maxPages = 17;
 
-  const basePath = "/images/phase-4/";
-  const imgEl = document.getElementById("comic-img");
-  const linkEl = document.getElementById("img-link");
-
-  function updateImage() {
-    const src = `${basePath}phase 4 sunday${page}.png`;
-    imgEl.src = src;
-    imgEl.alt = `Phase ${phase} - Page ${page}`;
-    linkEl.href = src; // ← this is the key line
-  }
-
-  // change this depending on phase
-  const maxPages = 50;
-
-
-  updateImage();
-
-  // Navigation buttons
   document.getElementById("next").onclick = () => {
     if (page < maxPages) {
       page++;
@@ -173,21 +162,46 @@
     }
   };
 
-  // Arrow keys
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight" && page < maxPages) {
-      page++;
-      updateURL();
+  const basePath = "/images/phase-4/";
+  const imgEl = document.getElementById("comic-img");
+  const linkEl = document.getElementById("img-link");
+  const selectEl = document.getElementById("page-select");
+
+  // --- dropdown setup ---
+  function populateDropdown(max) {
+    selectEl.innerHTML = "";
+
+    for (let i = 1; i <= max; i++) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = `Page ${i}`;
+      if (i === page) option.selected = true;
+      selectEl.appendChild(option);
     }
-    if (e.key === "ArrowLeft" && page > 1) {
-      page--;
-      updateURL();
-    }
+  }
+
+  selectEl.addEventListener("change", () => {
+    page = parseInt(selectEl.value);
+    updateURL();
   });
+
+  // --- image update ---
+  function updateImage() {
+    const src = `${basePath}phase 4 sunday${page}.png`;
+    imgEl.src = src;
+    imgEl.alt = `Phase ${phase} - Page ${page}`;
+    linkEl.href = src;
+
+    selectEl.value = page;
+  }
 
   function updateURL() {
     window.location.search = `?page=${page}`;
   }
+
+  // initialize
+  populateDropdown(maxPages);
+  updateImage();
 </script>
 
 </body>
