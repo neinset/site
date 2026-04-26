@@ -47,13 +47,17 @@
     }
 
     body {
-      background-color: #fff8f1;
+      background-color: #ffd2a1;
       font-family: sans-serif;
       margin: 0;
     }
 
+    header h1 {
+      color: #1a40ff;
+    }
+
     header, nav {
-      background-color: #ffffff33;
+      background-color: #ff704065;
       padding: 0.5em 1em;
     }
     nav {
@@ -80,7 +84,7 @@
     
     .phase-title {
       font-weight: bold;
-      color: #0048FF;
+      color: #1a40ff;
       font-size: 20px;
       margin-bottom: 0.25em;
       text-align: center;
@@ -145,7 +149,8 @@
   const params = new URLSearchParams(window.location.search);
 
   const phase = params.get("phase") || "4";
-  let page = parseInt(params.get("page")) || 1;
+  let page = parseInt(params.get("page"));
+  if (isNaN(page)) page = 0;
   const maxPages = 56;
 
   document.getElementById("next").onclick = () => {
@@ -156,7 +161,7 @@
   };
 
   document.getElementById("prev").onclick = () => {
-    if (page > 1) {
+    if (page > 0) {
       page--;
       updateURL();
     }
@@ -171,10 +176,10 @@
   function populateDropdown(max) {
     selectEl.innerHTML = "";
 
-    for (let i = 1; i <= max; i++) {
+    for (let i = 0; i <= max; i++) {
       const option = document.createElement("option");
       option.value = i;
-      option.textContent = `Page ${i}`;
+      option.textContent = `Page ${i + 1}`;
       if (i === page) option.selected = true;
       selectEl.appendChild(option);
     }
