@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Grief Complex - Phase 3</title>
+  <link rel="icon" href="/favicon.png">
+
+  <style>
+    .phase {
+      margin-bottom: 2em;
+    }
+
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 336px); 
+      gap: 3.5em;
+      /* justify-content: center; */
+    }
+
+    .thumb-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .thumb-frame {
+      padding: 0.5em;
+      background-color: #ffffff33;
+      box-sizing: border-box;
+      width: 320px; /* frame width same as image */
+    }
+
+    .thumb-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .thumb-row a {
+      display: block;
+    }
+
+    .thumb-desc {
+      width: 320px;
+    }
+
+    body {
+      background-color: #fff8f1;
+      font-family: sans-serif;
+      margin: 0;
+    }
+
+    header, nav {
+      background-color: #ffffff33;
+      padding: 0.5em 1em;
+    }
+    nav {
+      display: flex;
+      gap: 1em; /* space between links */
+    }
+
+    nav a {
+      color: #0048FF;
+      font-weight: bold;
+      /* margin-right: 1em; */
+      text-decoration: none;
+    }
+
+    main {
+      padding: 1em;
+            margin: 0;       
+      padding: 2rem 1.5rem; 
+    }
+
+    .thumb-frame img:hover {
+      transform: scale(1.05);
+    }
+    
+    .phase-title {
+      font-weight: bold;
+      color: #0048FF;
+      font-size: 20px;
+      margin-bottom: 0.25em;
+      text-align: center;
+    }
+        
+    nav a.active {
+      text-decoration: underline;
+    }
+   
+    .viewer {
+      display: flex;
+      justify-content: center;
+      padding: 1em;
+    }
+
+    .viewer img {
+      max-width: 90vw;
+      max-height: 85vh;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin-bottom: 2em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>The Grief Complex: Phase 3</h1>
+</header>
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/grief-complex/" class="active">The Grief Complex</a>
+  <a href="/grief-complex/assets.html">Assets</a>
+  <a href="/grief-complex/boards.html">Boards</a>
+</nav>
+
+<main>
+
+  <div class="viewer">
+    <a id="img-link" href="" target="_blank">
+      <img id="comic-img" src="" alt="">
+    </a>
+  </div>
+
+  <div class="nav-buttons">
+    <button id="prev">← Prev</button>
+    <button id="next">Next →</button>
+  </div>
+
+    <div style="text-align:center; margin-bottom: 1em;">
+    <label for="page-select">Page:</label>
+    <select id="page-select"></select>
+  </div>
+</main>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+
+  const phase = params.get("phase") || "4";
+  let page = parseInt(params.get("page")) || 1;
+  const maxPages = 105;
+
+  document.getElementById("next").onclick = () => {
+    if (page < maxPages) {
+      page++;
+      updateURL();
+    }
+  };
+
+  document.getElementById("prev").onclick = () => {
+    if (page > 1) {
+      page--;
+      updateURL();
+    }
+  };
+
+  const basePath = "/images/phase-3/";
+  const imgEl = document.getElementById("comic-img");
+  const linkEl = document.getElementById("img-link");
+  const selectEl = document.getElementById("page-select");
+
+  // --- dropdown setup ---
+  function populateDropdown(max) {
+    selectEl.innerHTML = "";
+
+    for (let i = 1; i <= max; i++) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = `Page ${i}`;
+      if (i === page) option.selected = true;
+      selectEl.appendChild(option);
+    }
+  }
+
+  selectEl.addEventListener("change", () => {
+    page = parseInt(selectEl.value);
+    updateURL();
+  });
+
+  // --- image update ---
+  function updateImage() {
+    const src = `${basePath}phase_3_${page}.png`;
+    imgEl.src = src;
+    imgEl.alt = `Phase ${phase} - Page ${page}`;
+    linkEl.href = src;
+
+    selectEl.value = page;
+  }
+
+  function updateURL() {
+    window.location.search = `?page=${page}`;
+  }
+
+  // initialize
+  populateDropdown(maxPages);
+  updateImage();
+</script>
+
+</body>
+</html>
