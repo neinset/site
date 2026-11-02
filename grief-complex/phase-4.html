@@ -155,6 +155,23 @@
     }
   };
 
+  document.addEventListener("keydown", (event) => {
+    // Don't trigger shortcuts while interacting with form elements
+    if (
+      event.target.tagName === "INPUT" ||
+      event.target.tagName === "TEXTAREA" ||
+      event.target.tagName === "SELECT"
+    ) {
+      return;
+    }
+
+    if (event.key === "ArrowRight") {
+      nextPage();
+    } else if (event.key === "ArrowLeft") {
+      prevPage();
+    }
+  });
+
   document.getElementById("prev").onclick = () => {
     if (page > 1) {
       page--;
