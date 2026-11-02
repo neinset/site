@@ -153,6 +153,8 @@
   if (isNaN(page)) page = 0;
   const maxPages = 56;
 
+  
+  // --- navigation buttons ---
   document.getElementById("next").onclick = () => {
     if (page < maxPages) {
       page++;
@@ -160,29 +162,32 @@
     }
   };
 
-  document.addEventListener("keydown", (event) => {
-    // Don't trigger shortcuts while interacting with form elements
-    if (
-      event.target.tagName === "INPUT" ||
-      event.target.tagName === "TEXTAREA" ||
-      event.target.tagName === "SELECT"
-    ) {
-      return;
-    }
-
-    if (event.key === "ArrowRight") {
-      nextPage();
-    } else if (event.key === "ArrowLeft") {
-      prevPage();
-    }
-  });
-
   document.getElementById("prev").onclick = () => {
-    if (page > 0) {
+    if (page > 1) {
       page--;
       updateURL();
     }
   };
+
+  // --- keyboard navigation ---
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+
+      if (page < maxPages) {
+        page++;
+        updateURL();
+      }
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+
+      if (page > 1) {
+        page--;
+        updateURL();
+      }
+    }
+  });
+
 
   const basePath = "/images/phase-2/";
   const imgEl = document.getElementById("comic-img");
